@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive clinic management system built with HTML, CSS, JavaScript and IndexedDB.">
+  <title>CarePoint | Clinic Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="CarePoint home">
+        <span class="brand-mark">✚</span><span>Care<span class="brand-light">Point</span><small>CLINIC MANAGEMENT</small></span>
+      </a>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="nav-menu" aria-label="Main navigation">
+        <button class="nav-link active" data-view="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-link" data-view="patients"><span>♙</span> Patients</button>
+        <button class="nav-link" data-view="appointments"><span>▣</span> Appointments</button>
+        <button class="nav-link" data-view="doctors"><span>⚕</span> Doctors</button>
+        <button class="nav-link" data-view="specialties"><span>✳</span> Specialties</button>
+        <button class="nav-link" data-view="treatments"><span>♡</span> Treatments</button>
+        <button class="nav-link" data-view="billing"><span>＄</span> Billing</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="storage-note"><span class="status-dot"></span><div><b>Local database</b><small>Data stays on this device</small></div></div>
+        <button class="nav-link" data-view="settings"><span>⚙</span> Data & Settings</button>
+        <div class="user-mini"><div class="avatar">AS</div><div><b>Clinic Admin</b><small>Administrator</small></div></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div><div class="eyebrow">CLINIC WORKSPACE</div><h1 id="pageTitle">Dashboard</h1></div>
+        <div class="top-actions"><span class="today-label" id="todayLabel"></span><button class="primary-btn compact" id="quickAdd">＋ Add New</button></div>
+      </header>
+      <section id="viewRoot" class="view-root" aria-live="polite"></section>
+      <footer class="footer">CarePoint Clinic Management System <span>•</span> Student Portfolio Project</footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><div><div class="eyebrow">RECORD MANAGEMENT</div><h2 id="modalTitle">Add record</h2></div><button class="icon-btn" id="modalClose" aria-label="Close">×</button></div>
+      <form id="recordForm"><div id="formFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="secondary-btn" id="cancelModal">Cancel</button><button class="primary-btn" type="submit">Save record</button></div></form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>
